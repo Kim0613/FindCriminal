@@ -13,6 +13,8 @@ public class ClickMovement : MonoBehaviour
     //캐릭터가 이동해야할 목적지
     private Vector3 destination;
 
+    int mask = (1 << 6); //6번 레이어; 바닥
+
     private void Awake()
     {
         camera = Camera.main;
@@ -29,13 +31,17 @@ public class ClickMovement : MonoBehaviour
     {
         //마우스 클릭했을때
         //마우스 커서 위치를 찾기
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
+
             //레이에 맞은 물체를 저장할 공간
             RaycastHit hit;
+            //Screen 좌표계로 표시된 마우스 커서 위치 좌표를 viewpoint 좌표계, 즉 0 ~ 1 사이의 비율 좌표계로 변환
             //마우스 클릭 좌표를 hit 변수에 저장 
             if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit))
             {
+                //바닥에 닿았을때만 움직이도록 조건 
+
                 //클릭한 좌표를 목적지로 설정
                 SetDestination(hit.point);
             }
