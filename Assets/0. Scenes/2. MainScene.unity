@@ -1064,9 +1064,9 @@ GameObject:
   - component: {fileID: 690701554}
   - component: {fileID: 690701553}
   - component: {fileID: 690701552}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
