@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Behavior : MonoBehaviour
 {
-    //½ÇÁ¦ Ä³¸¯ÅÍÀÇ Çàµ¿À» ´ã´çÇÏ´Â ½ºÅ©¸³Æ®
+    //ì‹¤ì œ ìºë¦­í„°ì˜ í–‰ë™ì„ ë‹´ë‹¹í•˜ëŠ” ìŠ¤í¬ë¦½íŠ¸
 
     public float speed = 2.0f;
     private Rigidbody rig;
@@ -16,11 +16,11 @@ public class Behavior : MonoBehaviour
 
     public bool Run(Vector3 targetPos)
     {
-        //ÀÌµ¿ÇÏ°íÀÚÇÏ´Â ÁÂÇ¥ °ª°ú ÇöÀç ³» À§Ä¡ÀÇ Â÷ÀÌ¸¦ ±¸ÇÑ´Ù
+        //ì´ë™í•˜ê³ ìí•˜ëŠ” ì¢Œí‘œ ê°’ê³¼ í˜„ì¬ ë‚´ ìœ„ì¹˜ì˜ ì°¨ì´ë¥¼ êµ¬í•œë‹¤
         float dis = Vector3.Distance(transform.position, targetPos);
-        if(dis >= 0.01f) //Â÷ÀÌ°¡ ¾ÆÁ÷ ÀÖ´Ù¸é
+        if(dis >= 0.01f) //ì°¨ì´ê°€ ì•„ì§ ìˆë‹¤ë©´
         {
-            //Ä³¸¯ÅÍ¸¦ ÀÌµ¿½ÃÅ²´Ù
+            //ìºë¦­í„°ë¥¼ ì´ë™ì‹œí‚¨ë‹¤
             transform.localPosition = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
             return true;
         }
@@ -29,7 +29,7 @@ public class Behavior : MonoBehaviour
 
     public void Turn(Vector3 targetPos)
     {
-        //Ä³¸¯ÅÍ¸¦ ÀÌµ¿ÇÏ°íÀÚ ÇÏ´Â ÁÂÇ¥°ª ¹æÇâÀ¸·Î È¸Àü
+        //ìºë¦­í„°ë¥¼ ì´ë™í•˜ê³ ì í•˜ëŠ” ì¢Œí‘œê°’ ë°©í–¥ìœ¼ë¡œ íšŒì „
         Vector3 dir = targetPos - transform.position;
         Vector3 dirXZ = new Vector3(dir.x, 0f, dir.z);
         Quaternion targetRot = Quaternion.LookRotation(dirXZ);

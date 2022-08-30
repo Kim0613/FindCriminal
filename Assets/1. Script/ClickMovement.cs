@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,12 +8,12 @@ public class ClickMovement : MonoBehaviour
     private Animator anim;
     public float moveSpeed;
 
-    //Ä³¸¯ÅÍ ÀÌµ¿ ÆÇ´Ü ¿©ºÎ
+    //ìºë¦­í„° ì´ë™ íŒë‹¨ ì—¬ë¶€
     private bool isMove;
-    //Ä³¸¯ÅÍ°¡ ÀÌµ¿ÇØ¾ßÇÒ ¸ñÀûÁö
+    //ìºë¦­í„°ê°€ ì´ë™í•´ì•¼í•  ëª©ì ì§€
     private Vector3 destination;
 
-    int mask = (1 << 6); //6¹ø ·¹ÀÌ¾î; ¹Ù´Ú
+    int mask = (1 << 6); //6ë²ˆ ë ˆì´ì–´; ë°”ë‹¥
 
     private void Awake()
     {
@@ -29,21 +29,25 @@ public class ClickMovement : MonoBehaviour
 
     void Update()
     {
-        //¸¶¿ì½º Å¬¸¯ÇßÀ»¶§
-        //¸¶¿ì½º Ä¿¼­ À§Ä¡¸¦ Ã£±â
+        //ë§ˆìš°ìŠ¤ í´ë¦­í–ˆì„ë•Œ
+        //ë§ˆìš°ìŠ¤ ì»¤ì„œ ìœ„ì¹˜ë¥¼ ì°¾ê¸°
         if (Input.GetMouseButtonDown(0))
         {
 
-            //·¹ÀÌ¿¡ ¸ÂÀº ¹°Ã¼¸¦ ÀúÀåÇÒ °ø°£
+            //ë ˆì´ì— ë§ì€ ë¬¼ì²´ë¥¼ ì €ì¥í•  ê³µê°„
             RaycastHit hit;
-            //Screen ÁÂÇ¥°è·Î Ç¥½ÃµÈ ¸¶¿ì½º Ä¿¼­ À§Ä¡ ÁÂÇ¥¸¦ viewpoint ÁÂÇ¥°è, Áï 0 ~ 1 »çÀÌÀÇ ºñÀ² ÁÂÇ¥°è·Î º¯È¯
-            //¸¶¿ì½º Å¬¸¯ ÁÂÇ¥¸¦ hit º¯¼ö¿¡ ÀúÀå 
+            //Screen ì¢Œí‘œê³„ë¡œ í‘œì‹œëœ ë§ˆìš°ìŠ¤ ì»¤ì„œ ìœ„ì¹˜ ì¢Œí‘œë¥¼ viewpoint ì¢Œí‘œê³„, ì¦‰ 0 ~ 1 ì‚¬ì´ì˜ ë¹„ìœ¨ ì¢Œí‘œê³„ë¡œ ë³€í™˜
+            //ë§ˆìš°ìŠ¤ í´ë¦­ ì¢Œí‘œë¥¼ hit ë³€ìˆ˜ì— ì €ì¥ 
             if(Physics.Raycast(camera.ScreenPointToRay(Input.mousePosition),out hit))
             {
-                //¹Ù´Ú¿¡ ´ê¾ÒÀ»¶§¸¸ ¿òÁ÷ÀÌµµ·Ï Á¶°Ç 
+                //ë°”ë‹¥ì— ë‹¿ì•˜ì„ë•Œë§Œ ì›€ì§ì´ë„ë¡ ì¡°ê±´ 
+                if(hit.collider.tag == "Floor")
+                {
+                    //í´ë¦­í•œ ì¢Œí‘œë¥¼ ëª©ì ì§€ë¡œ ì„¤ì •
+                    SetDestination(hit.point);
+                }
 
-                //Å¬¸¯ÇÑ ÁÂÇ¥¸¦ ¸ñÀûÁö·Î ¼³Á¤
-                SetDestination(hit.point);
+
             }
 
         }
@@ -55,16 +59,16 @@ public class ClickMovement : MonoBehaviour
     {
         destination = dest;
         isMove = true;
-        //°È´Â ¾Ö´Ï¸ŞÀÌ¼Ç ÀüÈ¯
+        //ê±·ëŠ” ì• ë‹ˆë©”ì´ì…˜ ì „í™˜
         anim.SetBool("isMove", true);
     }
-    //Ä³¸¯ÅÍ¸¦ ¸ñÀûÁö±îÁö ÀÌµ¿½ÃÅ°´Â ÇÔ¼ö
+    //ìºë¦­í„°ë¥¼ ëª©ì ì§€ê¹Œì§€ ì´ë™ì‹œí‚¤ëŠ” í•¨ìˆ˜
     private void Move()
     {
         if (isMove)
         {
             var dir = destination - transform.position;
-            //ÀÌµ¿ÇÏ´Â ¹æÇâÀ¸·Î ¹Ù¶óº¸°Ô ÇÏ±â
+            //ì´ë™í•˜ëŠ” ë°©í–¥ìœ¼ë¡œ ë°”ë¼ë³´ê²Œ í•˜ê¸°
             anim.transform.forward = dir;
             transform.position += dir.normalized * Time.deltaTime * moveSpeed;
         }

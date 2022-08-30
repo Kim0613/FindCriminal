@@ -1,10 +1,10 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Space1 : MonoBehaviour
 {
-    //¹üÁË »ìÀÎ ÇöÀå
+    //ë²”ì£„ ì‚´ì¸ í˜„ì¥
     void Start()
     {
         
@@ -14,12 +14,12 @@ public class Space1 : MonoBehaviour
     {
 
     }
-    //¸¶¿ì½º·Î ¿ÀºêÁ§Æ®¸¦ Å¬¸¯ÇÏ°í ¶¼´Â¼ø°£
+    //ë§ˆìš°ìŠ¤ë¡œ ì˜¤ë¸Œì íŠ¸ë¥¼ í´ë¦­í•˜ê³  ë–¼ëŠ”ìˆœê°„
     void OnMouseDown()
     {
         if(transform.gameObject.name == "Space (1)")
         {
-            print("Å¬¸¯");
+            print("í´ë¦­");
         }
     }
 }

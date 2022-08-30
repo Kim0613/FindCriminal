@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,10 +13,10 @@ public class StartManager : MonoBehaviour
         startBtn.onClick.AddListener(StartBtn);
     }
 
-    //½ÃÀÛ ¹öÆ° ´©¸¦ ½Ã
+    //ì‹œìž‘ ë²„íŠ¼ ëˆ„ë¥¼ ì‹œ
     void StartBtn()
     {
-        //·Îµù¾ÀÀ¸·Î ÀüÈ¯
+        //ë¡œë”©ì”¬ìœ¼ë¡œ ì „í™˜
         SceneManager.LoadScene(1);
     }
 }
