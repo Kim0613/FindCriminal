@@ -21,14 +21,14 @@ public class Space1 : MonoBehaviour
         //플레이어와의 거리
         Dist = Vector3.Distance(transform.position, player.transform.position);
 
-        //플레이어와의 거리가 10일때
-        if(Vector3.Distance(transform.position,player.transform.position) < 13)
-        {
-            //튜토리얼 팝업창 등장
-            tutorial.SetActive(true);
-            //일시정지
-            Time.timeScale = 0;
-        }
+        ////플레이어와의 거리가 10일때
+        //if(Vector3.Distance(transform.position,player.transform.position) < 13)
+        //{
+        //    //튜토리얼 팝업창 등장
+        //    tutorial.SetActive(true);
+        //    //일시정지
+        //    Time.timeScale = 0;
+        //}
 
     }
     //private void LateUpdate()
