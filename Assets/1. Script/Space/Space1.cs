@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Space1 : MonoBehaviour
 {
@@ -40,11 +41,9 @@ public class Space1 : MonoBehaviour
     {
         if(transform.gameObject.name == "Space (1)")
         {
-            //단서 정보창 등장
-            clue.SetActive(true);
+            //범죄현장씬 전환
+            SceneManager.LoadScene(3);
 
-            //일시정지
-            Time.timeScale = 0;
 
         }
     }

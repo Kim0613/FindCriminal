@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/0. Scenes/2. MainScene.unity
     guid: b379ac56d1a7f2e4793f776f91c5c836
+  - enabled: 1
+    path: Assets/0. Scenes/3-1. CrimeScene.unity
+    guid: 3f8c55bb1e06f714aa553fdf5b2afb7f
   m_configObjects: {}
