@@ -44,17 +44,9 @@ public class Space1 : MonoBehaviour
     {
         switch (transform.gameObject.name)
         {
-            case "Space (1)":
+            case "House_1":
                 //범죄현장씬 전환
                 SceneManager.LoadScene(3);
-                break;
-                //소주병
-            case "BearBottle":
-                print("소주병");
-                //정보창 등장
-                bearInfo.SetActive(true);
-                //일시정지
-                Time.timeScale = 0;
                 break;
 
         }
