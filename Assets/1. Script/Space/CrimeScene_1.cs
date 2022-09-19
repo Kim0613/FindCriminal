@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class CrimeScene_1 : MonoBehaviour
 {
-
+    //맥주병 단서창
     public GameObject bearInfo;
-
+    //확인 버튼
     public Button okButton;
   
 
@@ -15,11 +15,13 @@ public class CrimeScene_1 : MonoBehaviour
     {
         okButton.onClick.AddListener(Ok);
     }
-
+    //닫힘 버튼 누를시
     void Ok()
     {
+        print("닫힘");
+        //일시정지 해제
         Time.timeScale = 1;
-
+        //단서 정보창 닫기
         bearInfo.SetActive(false);
     }
 
@@ -33,7 +35,8 @@ public class CrimeScene_1 : MonoBehaviour
                 //정보창 등장
                 bearInfo.SetActive(true);
                 //일시정지
-                //Time.timeScale = 0;
+                Time.timeScale = 1;
+
                 break;
 
         }

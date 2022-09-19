@@ -34,10 +34,6 @@ public class Space1 : MonoBehaviour
         //}
 
     }
-    //private void LateUpdate()
-    //{
-    //            print("거리 : " + Dist);
-    //}
 
     //마우스로 오브젝트를 클릭하고 떼는순간
     void OnMouseDown()
@@ -47,6 +43,8 @@ public class Space1 : MonoBehaviour
             case "House_1":
                 //범죄현장씬 전환
                 SceneManager.LoadScene(3);
+                // 일시정지  
+                
                 break;
 
         }
