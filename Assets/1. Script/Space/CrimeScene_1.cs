@@ -18,11 +18,12 @@ public class CrimeScene_1 : MonoBehaviour
     //닫힘 버튼 누를시
     void Ok()
     {
-        print("닫힘");
         //일시정지 해제
         Time.timeScale = 1;
         //단서 정보창 닫기
         bearInfo.SetActive(false);
+
+        print("정보창 닫기");
     }
 
     void OnMouseDown()
@@ -36,7 +37,6 @@ public class CrimeScene_1 : MonoBehaviour
                 bearInfo.SetActive(true);
                 //일시정지
                 Time.timeScale = 1;
-
                 break;
 
         }

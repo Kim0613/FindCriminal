@@ -12,7 +12,8 @@ public class Space1 : MonoBehaviour
     //public GameObject player;
     //float Dist;
 
-    public GameObject bearInfo;
+    //입장 팝업창
+    public GameObject house1Pop;
 
     void Start()
     {
@@ -41,10 +42,10 @@ public class Space1 : MonoBehaviour
         switch (transform.gameObject.name)
         {
             case "House_1":
-                //범죄현장씬 전환
-                SceneManager.LoadScene(3);
+                //입장 팝업창 등장하기
+                house1Pop.SetActive(true);
                 // 일시정지  
-                
+                Time.timeScale = 0;
                 break;
 
         }

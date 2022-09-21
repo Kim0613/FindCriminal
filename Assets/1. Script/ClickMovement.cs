@@ -55,7 +55,7 @@ public class ClickMovement : MonoBehaviour
 
         Move();
     }
-
+    //목적지
     private void SetDestination(Vector3 dest)
     {
         destination = dest;
